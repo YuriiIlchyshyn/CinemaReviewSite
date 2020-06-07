@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+  }
+</script>
+	<style type="text/css">
+	.topnav {
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+body {
+	background-image: url()
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    z-index: -100;
+  }
+
+  .fullscreen-bg_video{
+    position:absolute;
+    top:0;
+    left:-125px;
+    width:120%;
+    height: 120%;
+  }  
+  .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.center-img {
+  text-align: center;
+}
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+.tabs { width: 100%; padding: 0px; margin: 0 auto; }
+.tabs>input { display: none; }
+.tabs>div {
+    display: none;
+    padding: 12px;
+    border: 1px solid #C0C0C0;
+    background: rgba(0, 0, 0, 0.7);
+}
+.tabs>label {
+    display: inline-block;
+    padding: 7px;
+    margin: 0 -5px -1px 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #C0C0C0;
+    background: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+.tabs>input:checked + label {
+    color: #4CAF50;
+    border: 1px solid #C0C0C0;
+    border-bottom: 1px solid #FFFFFF;
+    background: rgba(0, 0, 0, 0.7);
+}
+#tab_1:checked ~ #txt_1,
+#tab_2:checked ~ #txt_2,
+#tab_3:checked ~ #txt_3,
+#tab_4:checked ~ #txt_4 { display: block; }
+</style>
+</head>
+
+<body>
+<div class="topnav">
+  <a class="active" href="../home_page.html">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="../Sign_up.html">Sign up</a>
+  <a href="../Sign_in.html">Sign in</a>
+</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Cartoons</a>
+    <a href="#">Films</a>
+    <a href="#">Horror</a>
+    <a href="#">Comedy</a>
+    <a href="#">Drama</a>
+    <a href="#">Action movie</a>
+    <a href="#">Sci-fi</a>
+    <a href="#">Documentary</a>
+    <a href="#">Family movie</a>
+    <a href="#">Adventure</a>
+    <a href="#">Thriller</a>
+    <a href="#">Western</a>
+    <a href="#">Space film</a>
+    <a href="#">Detective</a>
+    <a href="#">Serial</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<video autoplay muted loop id="myVideo">
+  <source src="../home_true.mp4" type="video/mp4">
+</video>    
+
+<p class="center-img">
+  <img src="cartoonsIcon.png" width="150px" height="150px">
+</p>
+<div class="tabs">
+    <input type="radio" name="inset" value="" id="tab_1" checked>
+    <label for="tab_1">Tom and Jerry</label>
+
+    <input type="radio" name="inset" value="" id="tab_2">
+    <label for="tab_2">Sponge Bob</label>
+
+    <input type="radio" name="inset" value="" id="tab_3">
+    <label for="tab_3">The Simpsons</label>
+
+    <input type="radio" name="inset" value="" id="tab_4">
+    <label for="tab_4">Futurama</label>
+
+    <div id="txt_1">
+  <table border="1" width="100%" cellpadding="5">
+   <tr>
+    <th><iframe width="712" height="534" src="https://www.youtube.com/embed/IEM9Q2fdHA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
+    <th><iframe width="712" height="534" src="https://www.youtube.com/embed/nzrTpG3-Tho" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
+   </tr>
+   <tr>
+    <td><iframe width="712" height="534" src="https://www.youtube.com/embed/QJmKw33k0mA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></td>
+	<td><iframe width="712" height="534" src="https://www.youtube.com/embed/AGBjI0x9VbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></td>
+  </tr>
+ </table>
+    </div>
+    <div id="txt_2">
+   <table border="1" width="100%" cellpadding="5">
+   <tr>
+    <th><iframe width="712" height="534" src="https://www.youtube.com/embed/x5OILpZK4zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
+    <th><iframe width="712" height="534" src="https://www.youtube.com/embed/tMy3MpSaqhY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
+   </tr>
+   <tr>
+    <td><iframe width="712" height="534" src="https://www.youtube.com/embed/68h8-ESTY6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></td>
+	<td><iframe width="712" height="534" src="https://www.youtube.com/embed/k9iYm9PEAHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></td>
+  </tr>
+ </table>
+    </div>
+    <div id="txt_3">
+  <table border="1" width="100%" cellpadding="5">
+   <tr>
+    <th><iframe width="712" height="534" src="https://www.youtube.com/embed/EUJmwOwwH8Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
+    <th><iframe width="712" height="534" src="https://www.youtube.com/embed/NnFGyWBw3Qo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
+   </tr>
+   <tr>
+    <td><iframe width="712" height="534" src="https://www.youtube.com/embed/sRkC9d5LIDY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></td>
+	<td><iframe width="712" height="534" src="https://www.youtube.com/embed/oA97vwPacDo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></td>
+  </tr>
+ </table>
+    </div>
+    <div id="txt_4">
+    <table border="1" width="100%" cellpadding="5">
+   <tr>
+    <th><iframe width="712" height="534" src="https://www.youtube.com/embed/M0mAWlP3O50" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
+    <th><iframe width="712" height="534" src="https://www.youtube.com/embed/Sq75fCNYHtY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
+   </tr>
+   <tr>
+    <td><iframe width="712" height="534" src="https://www.youtube.com/embed/4WU6ln0lRR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></td>
+	<td><iframe width="712" height="534" src="https://www.youtube.com/embed/KLit7q0-mqk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></td>
+  </tr>
+ </table>
+    </div>
+</div>
+
+
+</script>
+</body>
+
+</html>
