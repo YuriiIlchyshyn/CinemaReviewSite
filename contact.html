@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+	.topnav {
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+body {
+	background-image: url()
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    z-index: -100;
+  }
+
+  .fullscreen-bg_video{
+    position:absolute;
+    top:0;
+    left:-125px;
+    width:120%;
+    height: 120%;
+  }  
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background-color: rgba(76, 175, 80, 0.5);
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Style the container/contact section */
+.container {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.text {
+    color:#4CAF50 ;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+<div class="topnav">
+  <a class="active" href="home_page.html">Home</a>
+  <a href="news.html">News</a>
+  <a href="#contact">Contact</a>
+  <a href="Sign_up.html">Sign up</a>
+  <a href="Sign_in.html">Sign in</a>
+</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Cartoons</a>
+    <a href="#">Films</a>
+    <a href="#">Horror</a>
+    <a href="#">Comedy</a>
+    <a href="#">Drama</a>
+    <a href="#">Action movie</a>
+    <a href="#">Sci-fi</a>
+    <a href="#">Documentary</a>
+    <a href="#">Family movie</a>
+    <a href="#">Adventure</a>
+    <a href="#">Thriller</a>
+    <a href="#">Western</a>
+    <a href="#">Space film</a>
+    <a href="#">Detective</a>
+    <a href="#">Serial</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<video autoplay muted loop id="myVideo">
+  <source src="home_true.mp4" type="video/mp4">
+</video>    
+<div class="container">
+  <div style="text-align:center">
+    <h2 class="text">Contact Us</h2>
+  </div>
+  <div class="row">
+    <div class="column">
+      <div id="map" style="width:100%;height:500px"></div>
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname" class="text">Nickname</label>
+        <input type="text" id="fname" name="Nickname" placeholder="Your Nickname...">
+        <label for="lname" class="text">Email</label>
+        <input type="text" id="lname" name="Email" placeholder="Your Email..">
+        <label for="country" class="text">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Afghanistan</option>
+          <option value="canada">Albania</option>
+          <option value="usa">Algeria</option>
+          <option value="australia">Argentina</option>
+          <option value="canada">Armenia</option>
+          <option value="usa">Austria</option>
+          <option value="usa">Australia</option>
+          <option value="australia">Belarus</option>
+          <option value="canada">Belgium</option>
+          <option value="usa">Bolivia</option>
+          <option value="usa">Brazil</option>
+          <option value="australia">Bulgaria</option>
+          <option value="canada">Cambodia</option>
+          <option value="usa">Canada</option>
+          <option value="usa">Central African Republic</option>
+          <option value="australia">Chile</option>
+          <option value="canada">China</option>
+          <option value="usa">Colombia</option>
+          <option value="usa">Congo (Congo-Brazzaville)</option>
+          <option value="australia">Croatia</option>
+          <option value="canada">Cuba</option>
+          <option value="usa">Egypt</option>
+          <option value="usa">Equatorial Guinea</option>
+          <option value="australia">Estonia</option>
+          <option value="canada"> Finland</option>
+          <option value="usa">France</option>
+          <option value="usa">Germany</option>
+          <option value="australia">Greece</option>
+          <option value="canada">Guatemala</option>
+          <option value="usa">Hungary</option>
+          <option value="australia">Iceland</option>
+          <option value="canada">India</option>
+          <option value="usa">Indonesia</option>
+          <option value="australia">Iran</option>
+          <option value="canada">Iraq</option>
+          <option value="usa">Ireland</option>
+          <option value="usa">Israel</option>
+          <option value="australia">Jamaica</option>
+          <option value="canada">Japan</option>
+          <option value="usa">Kazakhstan</option>
+          <option value="usa">Kyrgyzstan</option>
+          <option value="australia">Latvia</option>
+          <option value="canada">Lesotho</option>
+          <option value="usa">Liechtenstein</option>
+          <option value="usa">Luxembourg</option>
+          <option value="australia">Madagascar</option>
+          <option value="canada">Maldives</option>
+          <option value="usa">Mexico</option>
+          <option value="usa">Micronesia</option>
+          <option value="australia">Moldova</option>
+          <option value="canada">Monaco</option>
+          <option value="usa">Mongolia</option>
+          <option value="usa">Nepal</option>
+          <option value="australia">Netherlands</option>
+          <option value="canada">New Zealand </option>
+          <option value="usa">Nigeria</option>
+          <option value="usa">North Korea</option>
+          <option value="australia">Norway</option>
+          <option value="canada">Pakistan</option>
+          <option value="usa">Peru</option>
+          <option value="australia">Philippines</option>
+          <option value="canada">Poland</option>
+          <option value="usa">Portugal</option>
+          <option value="australia">Romania</option>
+          <option value="canada">Russia</option>
+          <option value="usa">San Marino</option>
+          <option value="usa">Serbia</option>
+          <option value="australia">Singapore</option>
+          <option value="canada">Slovakia</option>
+          <option value="usa">Slovenia</option>
+          <option value="usa">South Africa</option>
+          <option value="australia">South Korea</option>
+          <option value="canada">South Sudan</option>
+          <option value="usa">Spain</option>
+          <option value="usa">Syria</option>
+          <option value="australia">Tajikistan</option>
+          <option value="canada">Thailand</option>
+          <option value="usa">Turkey</option>
+          <option value="usa">Uganda</option>
+          <option value="australia">Ukraine</option>
+          <option value="canada">UK</option>
+          <option value="usa">USA</option>
+          <option value="usa">Uzbekistan</option>
+          <option value="australia">Venezuela</option>
+          <option value="canada">Vietnam</option>
+          <option value="usa">Zambia</option>
+        </select>
+        <label for="subject" class="text">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+// Initialize google maps
+function myMap() {
+  var myCenter = new google.maps.LatLng(49.846140, 24.016530);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 12};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR8P72HMX3zllKeeZt8X89dJWMEu0LSX8&callback=myMap" async defer></script>
+
+
+</body>
+
+</html>
